@@ -71,16 +71,68 @@
       </div>
     </header>
     <main>
-      <div class="backdrop is-hidden" data-modal>
+      <div class="backdrop is-hidden" data-modal-open>
         <div class="modal_window">
-        <button type="button" class=btn_close data-modal-close>x</button></div>
-        <section class="hero">
-          <h1 class="hero_h1">EFEKTYWNE ROZWIĄZANIA DLA WASZEGO BIZNESU</h1>
-          <button class="button_1" type="button">Zamów usługę</button>
-        </section>
-        <section class="lorem section container">
-          <ul class="container li-item">
-            <li>
+          <div class="modal__text">Zostaw swoje dane w formularzu poniżej</div>
+          <form class="form">
+           <div class="form_label"> 
+            <label for="username" class="label_name">
+             Imię       
+             <input class="label_input" type="text" name="username" id="username" required> 
+               <svg class="icon-person-black" id="icon-person-black"
+                  width="12" height="12" viewBox="0 0 12 12" x="192"  y="0">
+                  <use href="./images/icons.svg#icon-person-black"></use></svg>
+             </label>
+          </div> 
+
+          <div class="form_label">
+            <label for="phone_number" class="label_name">
+              telefon
+              <input class="label_input-box" type="tel" name="phone_number" id="phone_number" required>
+                <svg class="icon-phone-black" id="icon-phone-black"
+                  width="32" height="32" viewBox="0 0 32 32" x="144" y="0">
+                  <use href="./images/icons.svg#icon-phone-black"></use></svg>
+            </label>
+          </div>
+        
+
+            <div class="form_label">
+            <label for="email" class="label_name">
+              E-mail 
+             <input class="label_input" type="email" name="email" id="email" required>
+                   <svg class="icon-email-black" id="icon-email-black"width="15" height="12" viewBox="0 0 32 32" x="96" y="0">
+                    <use href="./images/icons.svg#icon-email-black"></use>
+                  </svg>
+              
+           </label>
+          </div>
+            <div class="form_label comment">
+            <label for="comment">
+             <span class="label_name"> Komentarz</span>
+              <textarea class="input-comment" name="comment" id="comment" placeholder="Wprowadź tekst" required></textarea>
+            </label></div>
+         
+        <label class="agreement">
+            <span class="vector-box">
+            <input  type="checkbox" name="agreement" value="agree" />
+             <svg class="icon-Vector " id="icon-Vector" width="11" height="8" viewBox="0 0 32 32" x="50" y="0">
+            <use href="./images/icons.svg#icon-Vector"></use>
+             </svg> 
+            </span>
+            <span class="agreement_text">Oświadczam, iż akceptuję <a href="#">Regulamin</a>  i <a href="#">Politykę Prywatności.</a><span>
+        </label>
+
+        <button class="btn_submit" type="submit">Wyślij</button>
+          <button type="button" class="btn_close" data-modal-close>x</button>
+        </div>
+      </div>
+      <section class="hero">
+        <h1 class="hero_h1">EFEKTYWNE ROZWIĄZANIA DLA WASZEGO BIZNESU</h1>
+        <button class="button_1" type="button">Zamów usługę</button>
+      </section>
+      <section class="lorem section container">
+        <ul class="container li-item">
+          <li>
             <div class="icon_box">
               <svg
                 class="icons"
@@ -202,8 +254,8 @@
                 height="260px"
               />
               <figcaption>
-                <h4 class="head_4 text_font">Jon Doe</h4>
-                <p class="head_4a text_font">Product Designer</p>
+                <h4 class="lorem_h4 text_font">Jon Doe</h4>
+                <p class="lorem_h4a text_font">Product Designer</p>
                 <ul>
                   <div class="social_media-box">
                     <li>
