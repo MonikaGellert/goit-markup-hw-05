@@ -23,7 +23,7 @@
           <nav>
             <ul>
               <li class="nav">
-                <a class="nav_link" href="index.html">Agencja</a>
+                <a class="nav_link active_link" href="index.html">Agencja</a>
               </li>
               <li class="nav">
                 <a class="nav_link" href="portfolio.html">Protfolio</a>
@@ -71,14 +71,14 @@
       </div>
     </header>
     <main>
-      <div class="backdrop is-hidden" data-modal-open>
+      <div class="backdrop is-hidden" data-modal>
         <div class="modal_window">
-          <div class="modal__text">Zostaw swoje dane w formularzu poniżej</div>
+          <div class="modal_text">Zostaw swoje dane w formularzu poniżej</div>
           <form class="form">
            <div class="form_label"> 
             <label for="username" class="label_name">
              Imię       
-             <input class="label_input" type="text" name="username" id="username" required> 
+             <input class="label_input-box" type="text" name="username" id="username" required> 
                <svg class="icon-person-black" id="icon-person-black"
                   width="12" height="12" viewBox="0 0 12 12" x="192"  y="0">
                   <use href="./images/icons.svg#icon-person-black"></use></svg>
@@ -94,12 +94,10 @@
                   <use href="./images/icons.svg#icon-phone-black"></use></svg>
             </label>
           </div>
-        
-
             <div class="form_label">
             <label for="email" class="label_name">
               E-mail 
-             <input class="label_input" type="email" name="email" id="email" required>
+             <input class="label_input-box" type="email" name="email" id="email" required>
                    <svg class="icon-email-black" id="icon-email-black"width="15" height="12" viewBox="0 0 32 32" x="96" y="0">
                     <use href="./images/icons.svg#icon-email-black"></use>
                   </svg>
@@ -111,7 +109,7 @@
              <span class="label_name"> Komentarz</span>
               <textarea class="input-comment" name="comment" id="comment" placeholder="Wprowadź tekst" required></textarea>
             </label></div>
-         
+
         <label class="agreement">
             <span class="vector-box">
             <input  type="checkbox" name="agreement" value="agree" />
@@ -119,16 +117,16 @@
             <use href="./images/icons.svg#icon-Vector"></use>
              </svg> 
             </span>
-            <span class="agreement_text">Oświadczam, iż akceptuję <a href="#">Regulamin</a>  i <a href="#">Politykę Prywatności.</a><span>
-        </label>
-
+            <span class="agreement_text">Oświadczam, iż akceptuję <a href="#">Regulamin</a> i <a href="#">Politykę Prywatności.</a></span>
+          </label>
         <button class="btn_submit" type="submit">Wyślij</button>
           <button type="button" class="btn_close" data-modal-close>x</button>
         </div>
+      </form>
       </div>
       <section class="hero">
         <h1 class="hero_h1">EFEKTYWNE ROZWIĄZANIA DLA WASZEGO BIZNESU</h1>
-        <button class="button_1" type="button">Zamów usługę</button>
+        <button data-modal-open class="button_1" type="button">Zamów usługę</button>
       </section>
       <section class="lorem section container">
         <ul class="container li-item">
@@ -754,6 +752,26 @@
             </ul>
           </div>
         </div>
+          <div class="newsletter_box">
+            <p class="join"> Zapisz się do newslettera</p>
+            <form name="email">
+              <label for="email">
+                   <input class=input_email type="email" name="email" id="email" placeholder=E-mail>
+              </label>
+     <button class="btn_sign-in" type="submit">
+       <span class="sign-in"><p class="sign-in-text"> Zapisz się</p>
+       <a href="#"></a>
+       <svg class="icon-icon-send" id="icon-icon-send">
+         <use href="./images/icons.svg#icon-icon-send" 
+         width="22"
+         height="22"
+         x="0"
+         y="0"
+         viewBox="0 0 32 32"
+         ></use></svg></span>
+     </button>
+            </form>
+           </div>
       </div>
     </footer>
     <script src="./js/modal.js"></script>
