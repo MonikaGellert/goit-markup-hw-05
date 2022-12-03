@@ -317,11 +317,6 @@ a {
   padding-left: 46px;
 }
 
-.li-item {
-  margin: 0 auto;
-  margin-right: 50px;
-}
-
 .header_2 {
   margin: 0;
   align-items: center;
@@ -613,6 +608,15 @@ figure {
 .label_3rd {
   padding: 27px 94px;
 }
+
+.label_name {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.01em;
+  color: var(--text2-color);
+  padding-bottom: 4px;
+}
 .images_active-card::after {
   position: absolute;
   width: 100%;
@@ -620,8 +624,15 @@ figure {
   top: 0%;
   left: 0%;
   display: flex;
-  transform: translateY(-100%);
+  transform: translateY(0, 100%);
   background-color: var(--main-underline-color);
+}
+.images_active-card > p {
+  color: var(--main-font-color);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.03em;
 }
 .image_active-with-overlay {
   position: relative;
@@ -636,9 +647,13 @@ figure {
   line-height: 28px;
   letter-spacing: 0.03em;
   padding: 49px 45px 49px 24px;
+  position: absolute;
   transition: 250ms;
+  transform: translateY(100%);
+  background-color: var(--main-underline-color);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: fill, color;
+  transition-property: transform, background-color, color;
+  top: 0;
 }
 
 .project_box {
@@ -658,7 +673,6 @@ figure {
 }
 .project_box:hover .images_active-card {
   display: flex;
-  position: absolute;
   transform: translate(0, 0);
 }
 
@@ -692,26 +706,18 @@ figure {
   transform: translate(-50%, -50%);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   transition-property: transform, box-shadow;
-  background: var(--main-color);
+  background-color: white;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+}
+.modal_text {
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 40px 40px 30px 40px;
 }
 
-.modal_window {
-  position: absolute;
-  width: 528px;
-  height: 581px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition-property: transform, box-shadow;
-  background: var(--main-color);
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-}
 .btn_close {
   position: absolute;
   right: 8px;
@@ -746,7 +752,7 @@ figure {
   font-size: 12px;
   line-height: 14px;
   letter-spacing: 0.01em;
-  color: var(--text2-color);
+  color: var(--secondary-text-color);
   padding-bottom: 4px;
 }
 
@@ -758,7 +764,7 @@ figure {
   display: flex;
 }
 
-.label__input-box {
+.label_input-box {
   display: block;
   padding: 0 0 0 30px;
   margin: 3px 0 10px 0;
@@ -773,18 +779,18 @@ figure {
   transition-property: transform, background-color, fill, border;
 }
 
-.label__input-box:focus,
-.label__input-box:hover {
-  border: 1px solid var(--brand-color);
-  fill: var(--brand-color);
-  background-color: var(--main-color);
+.label_input-box:focus,
+.label_input-box:hover {
+  border: 1px solid var(--main-underline-color);
+  fill: var(--main-underline-color);
+  background-color: var(--main-font-color);
   cursor: pointer;
 }
 
-.label__input-box:focus-within + svg,
-.label__input-box:hover + svg {
-  fill: var(--brand-color);
-  background-color: var(--main-color);
+.label_input-box:focus-within + svg,
+.label_input-box:hover + svg {
+  fill: var(--main-text-color);
+  background-color: var(--main-font-color);
   cursor: pointer;
 }
 
@@ -808,8 +814,8 @@ figure {
 
 .icon-email-black {
   position: absolute;
-  width: 15px;
-  height: 12px;
+  width: 30;
+  height: 27;
   fill: var(--main-text-color);
   top: 30px;
   left: 15px;
@@ -837,8 +843,8 @@ figure {
 
 .input_comment:hover,
 .input_comment:focus {
-  border: 1px solid var(--main-underline-color);
-  color: var(--main-text-color);
+  border: 1px solid var(--main-color);
+  color: var(--main-underline-color);
 }
 
 .comment {
@@ -862,7 +868,7 @@ Label {
   position: absolute;
   width: 16px;
   height: 15px;
-  fill: var(--main-font-color);
+  fill: var(--main-underline-color);
   top: 3px;
 }
 
@@ -881,13 +887,16 @@ Label {
   cursor: pointer;
 }
 
-input:focus + svg {
+input:focus,
+.icon-person-black,
+.icon-email-black,
+.icon-phone-black {
   background-color: var(--main-underline-color);
-  fill: var(--main-color);
+  fill: var(--main-underline-color-color);
   cursor: pointer;
 }
 
-Input:checked + svg {
+Input:checked {
   background-color: var(--main-underline-color);
   fill: var(--main-font-color);
   cursor: pointer;
@@ -908,12 +917,11 @@ Input:checked + svg {
   font-size: 14px;
   line-height: 24px;
   letter-spacing: 0.03em;
-  color: var(--text2-color);
+  color: var(--main-text-color);
   margin-left: 25px;
 }
 
-.agreement_text,
-a {
+.agreement_text a {
   color: var(--main-underline-color);
   padding-left: 5px;
   padding-right: 5px;
@@ -948,4 +956,82 @@ a {
 .btn_close:focus {
   border: 1px solid var(--main-underline-color);
   color: var(--main-underline-color);
+}
+.newsletter_box {
+  display: inline;
+  width: 570px;
+  height: 86px;
+  margin-left: 78px;
+  padding-top: 12px;
+}
+.join {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--main-color);
+  margin-bottom: 20px;
+}
+.input_email {
+  display: inline;
+  width: 358px;
+  height: 50px;
+  border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: #2f303a;
+  padding-left: 16px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  color: rgba(255, 255, 255, 0.6);
+  outline: none;
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition-property: transform, border;
+  margin-right: 8px;
+}
+
+.input_email:hover,
+.input_email:focus {
+  border: 1px solid var(--main-underline-color);
+  background-color: #ffffff;
+}
+
+.btn_sign-in {
+  width: 200px;
+  height: 50px;
+  background-color: var(--main-underline-color);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  border: none;
+  display: inline-flex;
+  text-align: center;
+  justify-content: center;
+  color: var(--main-font-color);
+  fill: var(--main-font-color);
+  gap: 10px;
+  align-items: center;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 30px;
+  letter-spacing: 0.06em;
+}
+.sign-in {
+  display: flex;
+  flex-direction: row;
+}
+
+.sign-in-text {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 24px;
+}
+
+.icon-icon-send {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  fill: var(--main-font-color);
+  margin-top: 30px;
 }
