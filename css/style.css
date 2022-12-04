@@ -405,12 +405,18 @@ figure {
   transition-property: fill;
 }
 
-.icone_box {
+.icon_box {
   width: 270px;
   height: 120px;
-  background: var(--icone_background);
+  background: #f5f4fa;
   border-radius: 4px;
   margin-bottom: 30px;
+  margin-left: 20px;
+}
+.icon_box:focus,
+.icon_box:hover {
+  border: 1px solid var(--main-underline-color);
+  fill: #2196f3;
 }
 .icons {
   margin: 25px 100px;
@@ -490,7 +496,6 @@ figure {
   justify-content: space-evenly;
   margin: 0 auto 50px auto;
   width: 201px;
-
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
@@ -782,11 +787,12 @@ figure {
   fill: var(--main-underline-color);
   background-color: var(--main-font-color);
   cursor: pointer;
+  color: var(--main-text-color);
 }
 
 .label_input-box:focus-within + svg {
-  fill: var(--main-text-color);
-  background-color: var(--main-font-color);
+  fill: var(--main-underline-color);
+  background-color: var(--main-undeline-color);
   cursor: pointer;
 }
 
@@ -839,8 +845,8 @@ figure {
 
 .input_comment:hover,
 .input_comment:focus {
-  border: 1px solid var(--main-font-color);
-  color: var(--main-underline-color);
+  border: 1px solid var(--main-underline-color);
+  color: var(--main-text-color);
 }
 
 .comment {
@@ -864,7 +870,7 @@ Label {
   position: absolute;
   width: 16px;
   height: 15px;
-  fill: var(--main-underline-color);
+  fill: var(--main-font-color);
   top: 3px;
 }
 
@@ -885,7 +891,7 @@ Label {
 
 input:focus + svg {
   background-color: var(--main-underline-color);
-  fill: var(--main-underline-color-color);
+  fill: var(--main-font-color);
   cursor: pointer;
 }
 
