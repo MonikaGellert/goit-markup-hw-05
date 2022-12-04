@@ -790,7 +790,8 @@ figure {
   color: var(--main-text-color);
 }
 
-.label_input-box:focus-within + svg {
+.label_input-box:focus + svg,
+.label_input-box:hover + svg {
   fill: var(--main-underline-color);
   background-color: var(--main-undeline-color);
   cursor: pointer;
